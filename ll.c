@@ -2,21 +2,6 @@
 #include <stdlib.h>
 #include "ll.h"
 
-/* One of the lessons here is to see that if we want to use a function to malloc something that
- * is a POINTER in the CALLER of the function, then we must send in the ADDRESS of the POINTER
- * to that function.
- * 
- * Recap: if we want to use a function to modify a VARIABLE in the caller
- *        then the CALLER needs to send in the ADDRESS of the VARIABLE
- *
- * Similarly: if we want to use a function to modify a POINTER in the caller
- *            then the CALLER needs to send in the ADDRESS of the POINTER
- *
- * In the code below, ll_add_to_head and ll_add_to_tail are dynamically creating new
- * nodes to be added to the linked list. Any dynamic creation of a node must be via
- * malloc.
- */
-
 int ll_add_to_head( llnode **head, int val) {
     llnode *old_head;
    if (head == NULL) {
